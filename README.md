@@ -52,7 +52,7 @@ After that call the install.sh script.
 
 The following script should do everything for you:
 ```
-wget https://github.com/Goaheadz/dbus-shelly-em-smartmeter/archive/refs/heads/main.zip
+wget https://github.com/steinerjakob/dbus-shelly-em-smartmeter/archive/refs/heads/main.zip
 unzip main.zip "dbus-shelly-em-smartmeter-main/*" -d /data
 mv /data/dbus-shelly-em-smartmeter-main /data/dbus-shelly-em-smartmeter
 chmod a+x /data/dbus-shelly-em-smartmeter/install.sh
