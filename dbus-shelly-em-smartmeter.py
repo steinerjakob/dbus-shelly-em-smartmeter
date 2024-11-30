@@ -141,15 +141,14 @@ class DbusShellyemService:
       
        
        #send data to DBus
-       self._dbusservice['/Ac/L1/Voltage'] = meter_data['emeters'][0]['voltage']
+              self._dbusservice['/Ac/L1/Voltage'] = meter_data['emeters'][0]['voltage']
  
-       current = meter_data['emeters'][1]['power'] / meter_data['emeters'][0]['voltage']
+       current = meter_data['emeters'][0]['power'] / meter_data['emeters'][0]['voltage']
        self._dbusservice['/Ac/L1/Current'] = current
-
-       #change to [1] for second probe in Shelly EM
-       self._dbusservice['/Ac/L1/Power'] = meter_data['emeters'][1]['power']
-       self._dbusservice['/Ac/L1/Energy/Forward'] = (meter_data['emeters'][1]['total']/1000)
-       self._dbusservice['/Ac/L1/Energy/Reverse'] = (meter_data['emeters'][1]['total_returned']/1000)    
+       
+       self._dbusservice['/Ac/L1/Power'] = meter_data['emeters'][0]['power']
+       self._dbusservice['/Ac/L1/Energy/Forward'] = (meter_data['emeters'][0]['total']/1000)
+       self._dbusservice['/Ac/L1/Energy/Reverse'] = (meter_data['emeters'][0]['total_returned']/1000)        
        
         
        #self._dbusservice['/Ac/Power'] = meter_data['total_power'] # positive: consumption, negative: feed into grid
