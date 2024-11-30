@@ -141,7 +141,7 @@ class DbusShellyemService:
       
        
        #send data to DBus
-              self._dbusservice['/Ac/L1/Voltage'] = meter_data['emeters'][0]['voltage']
+       self._dbusservice['/Ac/L1/Voltage'] = meter_data['emeters'][0]['voltage']
  
        current = meter_data['emeters'][0]['power'] / meter_data['emeters'][0]['voltage']
        self._dbusservice['/Ac/L1/Current'] = current
